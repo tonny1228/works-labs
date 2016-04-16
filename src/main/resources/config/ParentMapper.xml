@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="works.tonny.apps.demo.onetomany.ParentDAO" >
+    <select id="list" parameterType="string" resultMap="ClassResultMap">
+        select p.id id,p.name name,c.id cid,c.name cname from demo_parent p LEFT JOIN demo_child c on c.parent_id = p.id where p.name like concat('%',#{name},'%')
+    </select>
+    <resultMap id="ClassResultMap" type="works.tonny.apps.demo.onetomany.Parent">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <collection property="children" ofType="works.tonny.apps.demo.onetomany.Child" column="parent_id">
+            <id property="id" column="cid"></id>
+            <result property="name" column="cname"></result>
+        </collection>
+    </resultMap>
+</mapper>
