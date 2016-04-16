@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="parent" extends="default" namespace="/demo/parent">
+		<action name="*" class="parentAction" method="{1}">
+			<result name="list" type="redirect">list.action</result>
+			<result name="listjsp">/apps/demo/parent/list.jsp</result>
+			<result name="edit">/apps/demo/parent/edit.jsp</result>
+			<result name="add">/apps/demo/parent/add.jsp</result>
+		</action>
+	</package>
+
+</struts>
