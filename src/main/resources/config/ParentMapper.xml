@@ -12,4 +12,5 @@
             <result property="name" column="cname"></result>
         </collection>
     </resultMap>
+
 </mapper>

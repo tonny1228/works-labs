@@ -17,12 +17,12 @@ import java.util.List;
 /**
  * Created by Tonny on 2016/4/16.
  */
-@ContextConfiguration(locations = {"classpath*:config/applicationContext-basic.xml",
+@ContextConfiguration(locations = {"classpath:config/applicationContext-basic.xml",
         "classpath*:config/applicationContext-*mysql.xml", "classpath*:/config/applicationContext-mod-*.xml"})
 public class ParentTest extends AbstractTransactionalJUnit4SpringContextTests {
 
     @Autowired
-    @Qualifier("paDAO")
+//    @Qualifier("paDAO")
     private ParentDAO parentDAO;
 
 //    @Autowired
@@ -33,6 +33,12 @@ public class ParentTest extends AbstractTransactionalJUnit4SpringContextTests {
 //        System.out.println(paDAO);
         List<Parent> list = parentDAO.list("");
         for (Parent parent : list) {
+            System.out.println(parent);
+            System.out.println(parent.getChildren());
+        }
+
+        List<Parent> list2 = parentDAO.list();
+        for (Parent parent : list2) {
             System.out.println(parent);
             System.out.println(parent.getChildren());
         }

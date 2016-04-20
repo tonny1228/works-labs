@@ -12,10 +12,10 @@
     <!--<property name="basePackage" value="works.tonny.apps" />-->
     <!--<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />-->
     <!--</bean>-->
-    <bean id="paDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface"
-                  value="works.tonny.apps.demo.onetomany.ParentDAO"/>
-        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-    </bean>
+    <!--<bean id="paDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
+        <!--<property name="mapperInterface"-->
+                  <!--value="works.tonny.apps.demo.onetomany.ParentDAO"/>-->
+        <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
+    <!--</bean>-->
 
 </beans>
